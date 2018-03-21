@@ -440,6 +440,18 @@ public class InventoryTest extends TestCase {
 			assertEquals("Units of chocolate must be a positive integer", e.getMessage());
 		}
 	}
+	
+	/**
+	 * Test if the amount of sugar being used matches the amount in the
+	 * inventory
+	 * 
+	 * @throws RecipeException
+	 */
+	public void testUseAllChocolate() throws RecipeException {
+		recipe.setAmtChocolate("15");
+		inv.useIngredients(recipe);
+		assertEquals(15 - 15, inv.getChocolate());
+	}
 
 	/**
 	 * Test if the amount of milk being used is positive in the inventory.
@@ -464,6 +476,18 @@ public class InventoryTest extends TestCase {
 		} catch (RecipeException e) {
 			assertEquals("Units of milk must be a positive integer", e.getMessage());
 		}
+	}
+	
+	/**
+	 * Test if the amount of milk being used matches the amount in the
+	 * inventory
+	 * 
+	 * @throws RecipeException
+	 */
+	public void testUseAllMilk() throws RecipeException {
+		recipe.setAmtMilk("15");
+		inv.useIngredients(recipe);
+		assertEquals(15 - 15, inv.getMilk());
 	}
 
 	/**
@@ -490,6 +514,18 @@ public class InventoryTest extends TestCase {
 			assertEquals("Units of sugar must be a positive integer", e.getMessage());
 		}
 	}
+	
+	/**
+	 * Test if the amount of sugar being used matches the amount in the
+	 * inventory
+	 * 
+	 * @throws RecipeException
+	 */
+	public void testUseAllSugar() throws RecipeException {
+		recipe.setAmtSugar("15");
+		inv.useIngredients(recipe);
+		assertEquals(15 - 15, inv.getSugar());
+	}
 
 	/**
 	 * Test if the amount of coffee being used is positive in the inventory.
@@ -515,6 +551,19 @@ public class InventoryTest extends TestCase {
 			assertEquals("Units of coffee must be a positive integer", e.getMessage());
 		}
 	}
+	
+	/**
+	 * Test if the amount of coffee being used matches the amount in the
+	 * inventory
+	 * 
+	 * @throws RecipeException
+	 */
+	public void testUseAllCoffee() throws RecipeException {
+		recipe.setAmtCoffee("15");
+		inv.useIngredients(recipe);
+		assertEquals(15 - 15, inv.getCoffee());
+	}
+
 
 	/**
 	 * Test to see if the recipe tries to use more coffee than the inventory has.
